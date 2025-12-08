@@ -1,5 +1,4 @@
 'use client';
-
 import { ReactNode } from 'react';
 import TopNav from './TopNav';
 import { AuthProvider } from '@/contexts/AuthContext';
