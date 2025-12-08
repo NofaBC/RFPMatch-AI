@@ -4,8 +4,19 @@ import { User } from 'firebase/auth';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '@/lib/firebase';
 
+interface AuthContextType {
+  user: User | null;
+  loading: boolean;
+}
+
+const AuthContext = createContext<AuthContextType>({ 
+  user: null, 
+  loading: true 
+});
+
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, loading] = useAuthState(auth);
   return <AuthContext.Provider value={{ user, loading }}>{children}</AuthContext.Provider>;
 }
+
 export const useAuth = () => useContext(AuthContext);
