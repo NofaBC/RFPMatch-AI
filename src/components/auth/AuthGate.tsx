@@ -3,9 +3,10 @@
 import { ReactNode } from 'react';
 import { useAuth } from '@/hooks/useAuth';
 import { useRouter } from 'next/navigation';
-import Loader from '../shared/Loader';
-import EmptyState from '../shared/EmptyState';
 import { Shield } from 'lucide-react';
+import { Button } from '@/components/ui/Button';
+import Loader from '@/components/shared/Loader';
+import EmptyState from '@/components/shared/EmptyState';
 
 interface AuthGateProps {
   children: ReactNode;
@@ -31,12 +32,9 @@ export default function AuthGate({ children, requireAuth = true }: AuthGateProps
         title="Authentication Required"
         description="Please sign in to access this feature"
         action={
-          <button
-            onClick={() => router.push('/login')}
-            className="bg-primary-600 text-white px-4 py-2 rounded-lg hover:bg-primary-700 transition"
-          >
+          <Button onClick={() => router.push('/login')}>
             Sign In
-          </button>
+          </Button>
         }
       />
     );

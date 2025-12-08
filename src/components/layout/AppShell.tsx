@@ -3,7 +3,11 @@ import { ReactNode } from 'react';
 import TopNav from './TopNav';
 import { AuthProvider } from '@/contexts/AuthContext';
 
-export default function AppShell({ children }: { children: ReactNode }) {
+interface AppShellProps {
+  children: ReactNode;
+}
+
+export default function AppShell({ children }: AppShellProps) {
   return (
     <AuthProvider>
       <div className="min-h-screen bg-gray-50">
