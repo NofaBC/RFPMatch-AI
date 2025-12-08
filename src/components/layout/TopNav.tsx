@@ -1,12 +1,4 @@
 'use client';
-<<<<<<< HEAD
-=======
-
-import { useAuth } from '@/hooks/useAuth';
-import { Button } from '@/components/ui/Button';
-import { signOut } from 'firebase/auth';
-import { auth } from '@/lib/firebase';
->>>>>>> origin/main
 import { useRouter } from 'next/navigation';
 import { FileText } from 'lucide-react';
 
